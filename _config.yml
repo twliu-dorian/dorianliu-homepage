@@ -9,7 +9,13 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default" # Currently available options are "default", "air"
-title: "Your Name / Site Title"
+title:
+  "Dorian Liu / Academic Portfolio"
+  # The above is the main title of your site, this will appear in the top left of the navigation bar
+  # and in the title bar of most browsers. You can override it on a per-page basis by setting the
+  # "title" variable in the front matter of a page or post.
+  # If you do so, the title for that page will be formatted as:
+  # [page title] [title_separator] [site title]
 title_separator: "-"
 name: &name "Your Name"
 description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
@@ -27,11 +33,11 @@ author:
   avatar: "profile.png"
   name: "Dorian Liu"
   pronouns: # example: "she/her"
-  bio: "Short biography for the left-hand sidebar"
+  bio: "Building a world secured by cryptographic truth."
   location: "Baltimore, Maryland"
   employer: "Johns Hopkins University"
   uri: # URL
-  email: "none@example.org"
+  email: "tliu96@jh.edu"
 
   # Academic websites
   academia: # URL
