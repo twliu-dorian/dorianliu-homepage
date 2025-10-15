@@ -9,16 +9,10 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default" # Currently available options are "default", "air"
-title:
-  "Dorian Liu / Academic Portfolio"
-  # The above is the main title of your site, this will appear in the top left of the navigation bar
-  # and in the title bar of most browsers. You can override it on a per-page basis by setting the
-  # "title" variable in the front matter of a page or post.
-  # If you do so, the title for that page will be formatted as:
-  # [page title] [title_separator] [site title]
+title: "Dorian Liu / Academic Portfolio"
 title_separator: "-"
-name: &name "Your Name"
-description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
+name: &name "Dorian Liu"
+description: &description "Dorian Liu's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
 url:
   https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
   # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -55,7 +49,7 @@ author:
   bitbucket: # Username - Update with your username on the site
   codepen: # Username
   dribbble: # Username
-  github: "academicpages"
+  github: "twliu-dorian"
   kaggle: # Username
   stackoverflow: # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
@@ -70,7 +64,7 @@ author:
   keybase: # Username
   instagram: # Username
   lastfm: # Username
-  linkedin: # Username
+  linkedin: "twliu-dorian" # Username
   mastodon: # URL
   medium: # URL
   pinterest: # Username
