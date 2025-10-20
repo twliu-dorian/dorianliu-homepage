@@ -1,0 +1,86 @@
+/* _sass/theme/_gini_light.scss */
+
+/* 🔸 Sass variables frequently used by academicpages/mixins (define first) */
+$brand-color: #10b981;
+$primary-color: #10b981;
+
+$link-color: #0ea5a3;
+$link-color-hover: #0b8a88;
+$link-color-visited: #128c7e;
+/* Alias for other partials that expect this name */
+$link-hover-color: $link-color-hover;
+
+/* Text & surfaces */
+$text-color: #064e3b;
+$muted-text-color: #6b7280;
+$background-color: #ffffff;
+$surface-color: #ffffff;
+$surface-alt-color: #f8fafc;
+$border-color: #e5e7eb;
+
+/* Status colors (commonly used by mixins/notices) */
+$success-color: #10b981;
+$info-color: #0ea5a3;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+
+/* Code and badges */
+$code-bg: #f8fafc;
+$code-border: #e2e8f0;
+$badge-bg: #ecfdf5;
+$badge-text: #065f46;
+
+/* Typography (Sass variables for styles that need them) */
+$global-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Noto Sans TC", sans-serif;
+$heading-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Noto Sans TC", sans-serif;
+$code-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
+/* Rhythm */
+$global-line-height: 1.8;
+$global-paragraph-space: 1.1rem;
+$global-section-padding: 2.4rem;
+$global-radius: 14px;
+
+/* —— Layout sizing (used by academicpages) —— */
+$masthead-height: 72px; // masthead height
+$nav-height: 52px; // nav height
+$sidebar-width: 260px; // sidebar width
+$content-max: 820px; // article content max width
+$container-max: 1200px; // site container max width
+$grid-gutter: 22px; // layout gutter
+$radius-base: 14px; // unified radius
+
+/* 🔹 Mirror as CSS custom properties for easy overrides */
+:root {
+  --global-base-color: #10b981;
+  --global-base-color-2: #0ea5a3;
+
+  --global-bg-color: #ffffff;
+  --global-surface: #ffffff;
+  --global-surface-alt: #f8fafc;
+
+  --global-text-color: #064e3b;
+  --global-muted-text-color: #6b7280;
+  --global-border-color: #e5e7eb;
+
+  --global-link-color: #0ea5a3;
+  --global-link-color-hover: #0b8a88;
+  --global-link-color-visited: #128c7e;
+
+  --code-bg: #f8fafc;
+  --code-border: #e2e8f0;
+  --badge-bg: #ecfdf5;
+  --badge-text: #065f46;
+
+  --global-font-family: #{$global-font-family};
+  --heading-font-family: #{$heading-font-family};
+  --code-font-family: #{$code-font-family};
+
+  --global-line-height: #{$global-line-height};
+  --global-paragraph-spacing: #{$global-paragraph-space};
+  --global-section-padding: #{$global-section-padding};
+  --global-border-radius: #{$global-radius};
+}

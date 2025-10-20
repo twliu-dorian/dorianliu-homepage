@@ -1,0 +1,86 @@
+/* _sass/theme/_gini_dark.scss */
+
+/* Base hues matched to light theme, tuned for dark surfaces */
+$brand-color: #34d399;
+$primary-color: #34d399;
+
+$link-color: #2dd4bf;
+$link-color-hover: #22b3a1;
+$link-color-visited: #22c39a;
+/* Alias for other partials that expect this name */
+$link-hover-color: $link-color-hover;
+
+/* Text & surfaces (dark mode) */
+$background-color: #1f2937; // page background
+$surface-color: #1f2937; // cards / panels
+$surface-alt-color: #111827; // subtle alt surface
+$text-color: #e5e7eb; // primary text
+$muted-text-color: #9ca3af; // secondary text
+$border-color: #1f2937;
+
+/* Status colors */
+$success-color: #22c55e;
+$info-color: #38bdf8;
+$warning-color: #f59e0b;
+$danger-color: #f87171;
+
+/* Code and badges */
+$code-bg: #0b1220;
+$code-border: #1f2937;
+$badge-bg: #064e3b;
+$badge-text: #a7f3d0;
+
+/* Typography (reuse families) */
+$global-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Noto Sans TC", sans-serif;
+$heading-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Noto Sans TC", sans-serif;
+$code-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
+/* Rhythm */
+$global-line-height: 1.8;
+$global-paragraph-space: 1.1rem;
+$global-section-padding: 2.4rem;
+$global-radius: 14px;
+
+/* Layout sizing (keep in sync with light) */
+$masthead-height: 72px;
+$nav-height: 52px;
+$sidebar-width: 260px;
+$content-max: 820px;
+$container-max: 1200px;
+$grid-gutter: 22px;
+$radius-base: 14px;
+
+/* CSS custom properties for dark mode */
+:root[data-theme="dark"] {
+  --global-base-color: #34d399;
+  --global-base-color-2: #2dd4bf;
+
+  --global-bg-color: #283649;
+  --global-surface: #283649;
+  --global-surface-alt: #111827;
+
+  --global-text-color: #e5e7eb;
+  --global-muted-text-color: #9ca3af;
+  --global-border-color: #1f2937;
+
+  --global-link-color: #2dd4bf;
+  --global-link-color-hover: #22b3a1;
+  --global-link-color-visited: #22c39a;
+
+  --code-bg: #0b1220;
+  --code-border: #1f2937;
+  --badge-bg: #064e3b;
+  --badge-text: #a7f3d0;
+
+  --global-font-family: #{$global-font-family};
+  --heading-font-family: #{$heading-font-family};
+  --code-font-family: #{$code-font-family};
+
+  --global-line-height: #{$global-line-height};
+  --global-paragraph-spacing: #{$global-paragraph-space};
+  --global-section-padding: #{$global-section-padding};
+  --global-border-radius: #{$global-radius};
+}

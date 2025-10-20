@@ -47,7 +47,7 @@ redirect_from:
 
 ## 💻 Blockchain Security Corp. — Backend Software Engineer ｜ Intern
 
-📍 Taipei, Taiwan ｜ 🗓️ Jan 2021 – May 2021 / Jun 2021 – Aug 2021
+📍 Taipei, Taiwan ｜ 🗓️ Jan 2021 – May 2021 ｜ Jun 2021 – Aug 2021
 
 - Reduced 95% of data storage usage and improved comparison algorithm performance by 33% by extracting characteristic values from images and text for plagiarism detection.
 - Hosted and maintained six IPFS network nodes within the company for persistent storage of digital evidence.
