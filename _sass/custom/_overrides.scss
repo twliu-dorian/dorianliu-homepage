@@ -178,3 +178,10 @@ div.highlighter-rouge {
 img {
   border-radius: 10px;
 }
+
+/* Hide specific sidebar icons temporarily */
+/* Hide specific social icons */
+.author__urls .fa-orcid,
+.author__urls .fa-bluesky {
+  display: none !important;
+}
