@@ -197,7 +197,7 @@ img {
 .g-split {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.1fr);
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+  gap: clamp(1.25rem, 5vw, 4.5rem);
   align-items: center;
   margin: 0;
 }
@@ -208,7 +208,8 @@ img {
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0px;
+  box-shadow: -14px 14px 0px 0px var(--global-base-color-2);
 }
 
 /* right content block */

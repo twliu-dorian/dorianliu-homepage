@@ -11,7 +11,7 @@ redirect_from:
 <!-- Split Layout: Left Image | Right Content -->
 <section class="g-split">
   <div class="g-split__media">
-    <img src="/images/placeholder_800x1200.webp" alt="Dorian Liu">
+    <img src="/images/placeholder_400x600.png" alt="Dorian Liu">
   </div>
 
   <div class="g-split__content">
