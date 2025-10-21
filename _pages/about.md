@@ -11,7 +11,7 @@ redirect_from:
 <!-- Split Layout: Left Image | Right Content -->
 <section class="g-split">
   <div class="g-split__media">
-    <img src='/images/IMG_6937.jpg'  alt="Dorian Liu">
+    <img src="{{ '/images/img_6937.jpg' | relative_url }}" alt="Dorian Liu">
 
   </div>
 
