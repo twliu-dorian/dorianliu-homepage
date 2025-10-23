@@ -291,3 +291,126 @@ img {
     gap: 4rem;
   }
 }
+
+/* ========= Navbar ========= */
+
+/* ===== Static navbar: 左右分欄（不使用 GreedyNav） ===== */
+.static-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px; /* 依你的視覺調整 */
+}
+
+/* Navbar text color alignment with global theme color */
+.static-nav,
+.static-nav a,
+.static-nav .nav-links a,
+.static-nav .visible-links > li > a {
+  color: var(--global-text-color);
+}
+
+.static-nav .nav-links a:hover,
+.static-nav .visible-links > li > a:hover,
+.static-nav .nav-links a:focus {
+  color: var(--global-text-color);
+  text-decoration: underline;
+}
+
+/* 左：站名 */
+.static-nav .nav-left .site-title {
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.25rem;
+  background-image: linear-gradient(
+    var(--global-border-color),
+    var(--global-border-color)
+  );
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 0px);
+  background-size: 0% 4px;
+  transition: background-size 0.25s ease-in-out;
+}
+
+.static-nav .nav-left .site-title:hover,
+.static-nav .nav-left .site-title:focus {
+  text-decoration: underline;
+  background-size: 100% 4px;
+}
+
+/* 右：連結群 */
+.static-nav .nav-right .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 連結 */
+.static-nav .nav-right .nav-links > li > a {
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.25rem;
+  background-image: linear-gradient(
+    var(--global-border-color),
+    var(--global-border-color)
+  );
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 0px);
+  background-size: 0% 4px;
+  transition: background-size 0.25s ease-in-out;
+}
+.static-nav .nav-right .nav-links > li > a:hover,
+.static-nav .nav-right .nav-links > li > a:focus,
+.static-nav .nav-right .nav-links > li.current > a,
+.static-nav .nav-right .nav-links > li.active > a,
+.static-nav .nav-right .nav-links > li > a[aria-current="page"] {
+  background-size: 100% 4px;
+  text-decoration: underline;
+}
+
+/* Theme 切換鈕放到最右 */
+.static-nav #theme-toggle {
+  order: 999;
+}
+.static-nav #theme-toggle a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.25rem;
+  background-image: linear-gradient(
+    var(--global-border-color),
+    var(--global-border-color)
+  );
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 2px);
+  background-size: 0% 8px;
+  transition: background-size 0.25s ease-in-out;
+}
+.static-nav #theme-toggle a:hover,
+.static-nav #theme-toggle a:focus {
+  background-size: 0% 8px;
+  color: var(--global-link-color-hover);
+}
+
+/* 手機：簡單換行（若要漢堡，下方有進階版本） */
+@media (max-width: 1023.98px) {
+  .static-nav {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+  .static-nav .nav-right {
+    width: 100%;
+  }
+  .static-nav .nav-right .nav-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+}
