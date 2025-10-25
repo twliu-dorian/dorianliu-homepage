@@ -32,7 +32,7 @@ redirect_from:
         <span class="g-item__icon" aria-hidden="true">🔐 </span>
         <div class="g-item__body">
           <div class="g-item__title">Cryptography Researcher</div>
-          <div class="g-item__text">Ph.D. candidate at Johns Hopkins advised by Prof. Matthew Green. <br>Researching zero-knowledge proofs and computable legal contracts for verifiable, privacy-preserving systems.</div>
+          <div class="g-item__text">Ph.D. student at Johns Hopkins advised by Prof. Matthew Green. <br>Researching zero-knowledge proofs and computable legal contracts for verifiable, privacy-preserving systems.</div>
         </div>
       </li>
 
