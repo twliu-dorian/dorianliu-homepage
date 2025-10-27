@@ -1,3 +1,12 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  function copyBibtex(btn) {
+    const code = btn.previousElementSibling.innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      btn.innerText = "Copied!";
+      setTimeout(() => (btn.innerText = "Copy"), 1500);
+    });
+  }
+</script>
 
 {% include analytics.html %}
