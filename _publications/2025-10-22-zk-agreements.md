@@ -7,15 +7,16 @@ excerpt: "arXiv preprint arXiv:2510.20007, submitted to Financial Cryptography 2
 date: 2025-10-22
 venue: "arXiv preprint"
 paperurl: "https://arxiv.org/abs/2510.20007"
-citation: "@misc{liu2025zkagreementsprivacypreservingwayestablish,
-      title={zk-Agreements: A Privacy-Preserving Way to Establish Deterministic Trust in Confidential Agreements}, 
-      author={To-Wen Liu and Matthew Green},
-      year={2025},
-      eprint={2510.20007},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR},
-      url={https://arxiv.org/abs/2510.20007}, 
-}"
+citation: |
+  @misc{liu2025zkagreementsprivacypreservingwayestablish,
+        title={zk-Agreements: A Privacy-Preserving Way to Establish Deterministic Trust in Confidential Agreements}, 
+        author={To-Wen Liu and Matthew Green},
+        year={2025},
+        eprint={2510.20007},
+        archivePrefix={arXiv},
+        primaryClass={cs.CR},
+        url={https://arxiv.org/abs/2510.20007}, 
+  }
 ---
 
 **Abstract**
