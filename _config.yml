@@ -24,7 +24,7 @@ repository: "twliu-dorian.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile.png"
+  avatar: "IMG_6982.jpg"
   name: "Dorian Liu"
   pronouns: # example: "she/her"
   bio: "Building a world secured by cryptographic truth."
@@ -36,7 +36,7 @@ author:
   # Academic websites
   academia: # URL
   arxiv: # URL - Update with the correct link to your profile
-  googlescholar: "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar: "https://scholar.google.com/citations?user=XKigaHYAAAAJ&hl=en&oi=sra"
   inspire-hep: # URL
   impactstory: # URL
   # orcid: "http://orcid.org/yourorcidurl"
