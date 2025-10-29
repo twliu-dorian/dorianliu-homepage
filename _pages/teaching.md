@@ -7,7 +7,7 @@ redirect_from:
   - /teaching.html
 ---
 
-I’ve contributed as a **Teaching Assistant** for several Computer Science courses at Johns Hopkins University.
+I’ve contributed as a **Teaching Assistant** for multiple Computer Science courses at Johns Hopkins University.
 
 ---
 
