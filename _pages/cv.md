@@ -68,9 +68,9 @@ Linux, AWS, MySQL, RESTful API, Docker, Git, Kafka, C4 Model, PlantUML
 
 # 🪶 Publications
 
-  <ul>{% for post in site.publications reversed %}
+  <div>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</div>
 <!--   
 Talks
 ======

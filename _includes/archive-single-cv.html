@@ -14,7 +14,7 @@
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    <li>
+    <div>
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
@@ -36,7 +36,9 @@
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
-    </li>
+   <br />
+   
+    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">BibTeX formatted citation: <br/>{{ post.citation }}</p> {% endif %}
+  </div>
  </article>
 </div>
