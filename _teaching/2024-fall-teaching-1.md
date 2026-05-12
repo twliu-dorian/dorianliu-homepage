@@ -8,10 +8,6 @@ date: 2024-09-01
 location: "Baltimore, MD"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Teaching Assistant for Dr. Xiangyang Li's Fall 2024 undergraduate course on information security at Johns Hopkins. The course introduces students to the foundations of computer security — threat models, access control, cryptography basics, network and web security, software vulnerabilities, and defensive engineering practices.
 
-# Heading 1
-
-## Heading 2
-
-This talk is an introduction to Testing.
+Course materials and assignments: [xyliatgithub/IntroInfoSec2024](https://github.com/xyliatgithub/IntroInfoSec2024)

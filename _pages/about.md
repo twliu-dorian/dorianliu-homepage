@@ -12,46 +12,35 @@ redirect_from:
 <!-- Split Layout: Left Image | Right Content -->
 <section class="g-split">
   <div class="g-split__media">
-    <img src="{{ '/images/img_6937.jpg' | relative_url }}" alt="Dorian Liu">
+    <img src="{{ '/images/20260102_Dorian_1.jpg' | relative_url }}" alt="Dorian Liu">
 
   </div>
 
   <div class="g-split__content">
     <p class="g-overline">About Me</p>
 
-    <p class="g-title">
-      My name is <strong>Dorian Liu</strong>.
-      <br><br>
-      I’m building a world secured by <strong>Cryptographic Truth</strong>.
+    <p class="g-bio">
+      I am a first-year Ph.D. student in Computer Science at <strong>Johns Hopkins University</strong>, where I am extremely fortunate to be advised by Professor <a href="https://isi.jhu.edu/~mgreen/">Matthew D. Green</a>. My work is in applied cryptography, motivated by the dream of building a world secured by cryptographic truths — systems whose guarantees hold even when the parties running them, and the machines they run on, do not.
     </p>
 
-    <p class="g-overline">My Works</p>
+    <p class="g-bio">
+      My research interests center on building real-world cryptographic technologies, with a particular focus on <strong>zero-knowledge proofs</strong>, <strong>blockchains</strong>, and <strong>decentralized finance</strong>.
+    </p>
 
-    <ul class="g-list">
-      <li class="g-item">
-        <span class="g-item__icon" aria-hidden="true">🔐 </span>
-        <div class="g-item__body">
-          <div class="g-item__title">Cryptography Researcher</div>
-          <div class="g-item__text">Ph.D. student at Johns Hopkins advised by Prof. Matthew Green. <br>Researching zero-knowledge proofs and computable legal contracts for verifiable, privacy-preserving systems.</div>
-        </div>
-      </li>
+    <p class="g-bio">
+      Feel free to reach out at <a id="contact-email" href="#" data-u="tliu96" data-d="jh.edu" rel="nofollow">tliu96 [at] jh [dot] edu</a>.
+    </p>
 
-      <li class="g-item">
-        <span class="g-item__icon" aria-hidden="true">💻 </span>
-        <div class="g-item__body">
-          <div class="g-item__title">Engineer of Verifiable Systems</div>
-          <div class="g-item__text">Former ZK Research Engineer at Nethermind, built the first PLONK verifier in Cairo and optimized Starknet proofs for real-world blockchain scalability.</div>
-        </div>
-      </li>
-
-      <li class="g-item">
-        <span class="g-item__icon" aria-hidden="true">🎓 </span>
-        <div class="g-item__body">
-          <div class="g-item__title">Educator & Security Advocate</div>
-          <div class="g-item__text"> Teaching Assistant for three core security courses at Johns Hopkins, guiding students through practical cryptography and system defense.</div>
-        </div>
-      </li>
-    </ul>
+    <script>
+      (function () {
+        var a = document.getElementById('contact-email');
+        if (!a) return;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.location.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+        });
+      })();
+    </script>
 
   </div>
 </section>
