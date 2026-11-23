@@ -11,23 +11,23 @@ redirect_from:
 
 ---
 
-# 🎓 Education
+## 🎓 Education
 
-## 🏫 Johns Hopkins University · Baltimore, MD, USA
+### 🏫 Johns Hopkins University · Baltimore, MD, USA
 
 - **Ph.D. in Computer Science** (Jun 2025 – Present)  
   Advisor: **Prof. Matthew D. Green**
 - **M.S. in Computer Science (Security Informatics)** (Aug 2023 – May 2025)
 
-## 🏫 National Tsing Hua University · Hsinchu, Taiwan
+### 🏫 National Tsing Hua University · Hsinchu, Taiwan
 
 - **B.S. in Computer Science & Power Mechanical Engineering** (Sep 2017 – Jun 2021)
 
 ---
 
-# 💼 Work Experience
+## 💼 Work Experience
 
-## 💻 Nethermind — ZK Research Engineer ｜ Intern
+### 💻 Nethermind — ZK Research Engineer ｜ Intern
 
 📍 Remote, United Kingdom ｜ 🗓️ May 2024 – Jun 2025
 
@@ -35,7 +35,7 @@ redirect_from:
 - Developed and open-sourced the first PLONK verifier written in Cairo within the Starknet ecosystem.
 - Reduced 65% of CairoVM step counts by implementing Karatsuba fast extension field algorithms and writing circuit-optimized Algebraic Intermediate Representation (A.I.R.) code for higher efficiency.
 
-## 💻 Chelpis Quantum Tech. — Blockchain/Cryptography Software Engineer
+### 💻 Chelpis Quantum Tech. — Blockchain/Cryptography Software Engineer
 
 📍 Taipei, Taiwan ｜ 🗓️ Dec 2021 – May 2023
 
@@ -45,7 +45,7 @@ redirect_from:
 - Developed a Public Key Infrastructure (PKI) used by over 2,000 hardware devices in collaboration with Infineon, employing TPM to construct a 4-level key hierarchy for embedded systems.
 - Built NFT smart contracts minted by over 1,000 users and developed backend services for an NFT marketplace supporting atomic swaps across ERC20, ERC721, and ERC1155 tokens via 0x protocol v3.
 
-## 💻 Blockchain Security Corp. — Backend Software Engineer ｜ Intern
+### 💻 Blockchain Security Corp. — Backend Software Engineer ｜ Intern
 
 📍 Taipei, Taiwan ｜ 🗓️ Jan 2021 – May 2021 ｜ Jun 2021 – Aug 2021
 
@@ -54,19 +54,19 @@ redirect_from:
 
 ---
 
-# 🛠️ Skills
+## 🛠️ Skills
 
-## 🧩 Programming Languages
+### 🧩 Programming Languages
 
 Rust, Cairo, Go, Solidity, C, C++, Python, Circom, Typescript
 
-## 🧩 Dev Tools
+### 🧩 Dev Tools
 
 Linux, AWS, MySQL, RESTful API, Docker, Git, Kafka, C4 Model, PlantUML
 
 ---
 
-# 🪶 Publications
+## 🪶 Publications
 
   <div>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}

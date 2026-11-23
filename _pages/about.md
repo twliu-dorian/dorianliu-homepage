@@ -1,7 +1,8 @@
 ---
 permalink: /
-title: ""
-excerpt: "About me"
+title: "Applied Cryptography"
+hide_title: true
+excerpt: "Dorian Liu's research in applied cryptography, zero-knowledge proofs, blockchains, and decentralized finance at Johns Hopkins University."
 author_profile: false
 classes: about-page
 redirect_from:
@@ -12,12 +13,16 @@ redirect_from:
 <!-- Split Layout: Left Image | Right Content -->
 <section class="g-split">
   <div class="g-split__media">
-    <img src="{{ '/images/20260102_Dorian_1.jpg' | relative_url }}" alt="Dorian Liu">
+    <img src="{{ '/images/dorian-640.jpg' | relative_url }}"
+         srcset="{{ '/images/dorian-640.jpg' | relative_url }} 640w, {{ '/images/dorian-960.jpg' | relative_url }} 960w"
+         sizes="(max-width: 600px) 200px, (max-width: 900px) 280px, 380px"
+         width="640" height="960" fetchpriority="high" decoding="async" alt="Dorian Liu">
 
   </div>
 
   <div class="g-split__content">
-    <p class="g-overline">About Me</p>
+    <p class="g-overline">Applied Cryptography · Johns Hopkins University</p>
+    <h1 class="g-title">Dorian Liu</h1>
 
     <p class="g-bio">
       I am a first-year Ph.D. student in Computer Science at <strong>Johns Hopkins University</strong>, where I am extremely fortunate to be advised by Professor <a href="https://isi.jhu.edu/~mgreen/">Matthew D. Green</a>. My work is in applied cryptography, motivated by the dream of building a world secured by cryptographic truths — systems whose guarantees hold even when the parties running them, and the machines they run on, do not.
@@ -28,19 +33,15 @@ redirect_from:
     </p>
 
     <p class="g-bio">
-      Feel free to reach out at <a id="contact-email" href="#" data-u="tliu96" data-d="jh.edu" rel="nofollow">tliu96 [at] jh [dot] edu</a>.
+      Feel free to reach out at <a href="mailto:tliu96@jh.edu">tliu96@jh.edu</a>.
     </p>
 
-    <script>
-      (function () {
-        var a = document.getElementById('contact-email');
-        if (!a) return;
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.location.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
-        });
-      })();
-    </script>
+    <nav class="g-links" aria-label="Research and academic profiles">
+      <a href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a href="{{ '/cv/' | relative_url }}">CV</a>
+      <a href="{{ site.author.googlescholar }}">Google Scholar</a>
+      <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+    </nav>
 
   </div>
 </section>

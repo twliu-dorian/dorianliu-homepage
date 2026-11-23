@@ -1,11 +1,14 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
 <script>
-  function copyBibtex(btn) {
+  async function copyBibtex(btn) {
     const code = btn.previousElementSibling.innerText;
-    navigator.clipboard.writeText(code).then(() => {
+    try {
+      await navigator.clipboard.writeText(code);
       btn.innerText = "Copied!";
-      setTimeout(() => (btn.innerText = "Copy"), 1500);
-    });
+    } catch (error) {
+      btn.innerText = "Select and copy the text";
+    }
+    setTimeout(() => (btn.innerText = "Copy"), 2500);
   }
 </script>
 

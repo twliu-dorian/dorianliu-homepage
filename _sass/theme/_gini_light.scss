@@ -4,9 +4,9 @@
 $brand-color: #10b981;
 $primary-color: #10b981;
 
-$link-color: #0ea5a3;
-$link-color-hover: #0b8a88;
-$link-color-visited: #128c7e;
+$link-color: #087d78;
+$link-color-hover: #065f5c;
+$link-color-visited: #086c61;
 /* Alias for other partials that expect this name */
 $link-hover-color: $link-color-hover;
 
@@ -69,9 +69,9 @@ $radius-base: 14px; // unified radius
   --global-muted-text-color: #6b7280;
   --global-border-color: #e5e7eb;
 
-  --global-link-color: #0ea5a3;
-  --global-link-color-hover: #0b8a88;
-  --global-link-color-visited: #128c7e;
+  --global-link-color: #087d78;
+  --global-link-color-hover: #065f5c;
+  --global-link-color-visited: #086c61;
 
   --code-bg: #f8fafc;
   --code-border: #e2e8f0;

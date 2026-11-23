@@ -3,8 +3,7 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <!-- 自訂靜態導覽，不用 GreedyNav -->
-      <nav id="site-nav" class="static-nav">
+      <nav id="site-nav" class="static-nav" aria-label="Main navigation">
         <div class="nav-left">
           <a class="site-title" href="{{ base_path }}/">{{ site.title }}</a>
         </div>
@@ -14,18 +13,20 @@
             {% for link in site.data.navigation.main %} {% if link.url contains
             'http' %} {% assign domain = '' %} {% else %} {% assign domain =
             base_path %} {% endif %}
-            <li><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% assign current_link = false %}
+            {% if page.url == link.url %}{% assign current_link = true %}{% endif %}
+            {% if page.collection == 'publications' and link.url == '/publications/' %}{% assign current_link = true %}{% endif %}
+            <li><a href="{{ domain }}{{ link.url }}"{% if current_link %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
             {% endfor %}
 
-            <li id="theme-toggle">
-              <a role="button" aria-labelledby="theme-icon">
+            <li>
+              <button id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
                 <i
                   id="theme-icon"
                   class="fa-solid fa-sun"
                   aria-hidden="true"
-                  title="toggle theme"
                 ></i>
-              </a>
+              </button>
             </li>
           </ul>
         </div>

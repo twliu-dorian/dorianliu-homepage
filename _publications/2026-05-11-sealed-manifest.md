@@ -3,10 +3,10 @@ title: "The Sealed Manifest: Privacy-Preserving Vulnerability Assurance for Soft
 collection: publications
 category: manuscripts
 permalink: /publication/2026-05-11-sealed-manifest
-excerpt: "Under review at ACM CCS 2026. A zero-knowledge framework that lets manufacturers demonstrate SBOM vulnerability assurance without revealing component-level supply chain details."
+excerpt: "A zero-knowledge framework that lets manufacturers demonstrate SBOM vulnerability assurance without revealing component-level supply chain details."
 date: 2026-05-11
-venue: "Under review at ACM CCS 2026"
-publication_status: "Under review at ACM CCS 2026"
+venue: "Preprint"
+publication_status: "Preprint, 2026"
 ---
 
 **Abstract**

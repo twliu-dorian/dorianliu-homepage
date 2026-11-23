@@ -1,142 +1,90 @@
-/* ==========================================================================
-   Various functions that we want to use within the template
-   ========================================================================== */
-
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
-let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  return (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
-};
-
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
-let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting != "system") {
-    return themeSetting;
+// Theme preference is shared with the small pre-paint script in head.html.
+let sessionTheme = null;
+const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
+const determineThemeSetting = () => {
+  if (sessionTheme) return sessionTheme;
+  try {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") return saved;
+  } catch (error) {
+    // Theme controls still work when browser storage is unavailable.
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  return "system";
 };
-
-// detect OS/browser preference
-const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-// Set the theme on page load or when explicitly called
-let setTheme = (theme) => {
-  const use_theme =
-    theme ||
-    localStorage.getItem("theme") ||
-    $("html").attr("data-theme") ||
-    browserPref;
-
-  if (use_theme === "dark") {
-    $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-  } else if (use_theme === "light") {
-    $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+const determineComputedTheme = () => {
+  const setting = determineThemeSetting();
+  return setting === "system" ? (colorPreference.matches ? "dark" : "light") : setting;
+};
+const setTheme = (theme = determineComputedTheme()) => {
+  const dark = theme === "dark";
+  document.documentElement.setAttribute("data-theme", theme);
+  const button = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+  if (button) button.setAttribute("aria-pressed", String(dark));
+  if (icon) {
+    icon.classList.toggle("fa-moon", dark);
+    icon.classList.toggle("fa-sun", !dark);
   }
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", dark ? "#283649" : "#ffffff");
+};
+const toggleTheme = () => {
+  sessionTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  setTheme(sessionTheme);
+  try { localStorage.setItem("theme", sessionTheme); } catch (error) {}
 };
 
-// Toggle the theme manually
-var toggleTheme = () => {
-  const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "light" : "dark";
-  localStorage.setItem("theme", new_theme);
-  setTheme(new_theme);
-};
-
-/* ==========================================================================
-   Plotly integration script so that Markdown codeblocks will be rendered
-   ========================================================================== */
-
-// Read the Plotly data from the code block, hide it, and render the chart as new node. This allows for the 
-// JSON data to be retrieve when the theme is switched. The listener should only be added if the data is 
-// actually present on the page.
-import { plotlyDarkLayout, plotlyLightLayout } from './theme.js';
-let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
+// Chart templates are fetched only on pages containing Plotly code blocks.
+const plotlyElements = document.querySelectorAll("pre > code.language-plotly");
 if (plotlyElements.length > 0) {
-  document.addEventListener("readystatechange", () => {
-    if (document.readyState === "complete") {
-      plotlyElements.forEach((elem) => {
-        // Parse the Plotly JSON data and hide it
-        var jsonData = JSON.parse(elem.textContent);
-        elem.parentElement.classList.add("hidden");
-
-        // Add the Plotly node
-        let chartElement = document.createElement("div");
-        elem.parentElement.after(chartElement);
-
-        // Set the theme for the plot and render it
-        const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
-        if (jsonData.layout) {
-          jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
-        } else {
-          jsonData.layout = { template: theme };
-        }
-        Plotly.react(chartElement, jsonData.data, jsonData.layout);
-      });
+  const renderPlots = async () => {
+    if (!window.Plotly) return;
+    const { plotlyDarkLayout, plotlyLightLayout } = await import('./theme.js');
+    for (const element of plotlyElements) {
+      try {
+        const data = JSON.parse(element.textContent);
+        const chart = document.createElement("div");
+        element.parentElement.after(chart);
+        const template = determineComputedTheme() === "dark" ? plotlyDarkLayout : plotlyLightLayout;
+        const layout = { template, ...data.layout };
+        await Plotly.react(chart, data.data, layout, { responsive: true });
+        element.parentElement.classList.add("hidden");
+      } catch (error) {
+        // Keep the source visible if a chart cannot be rendered.
+      }
     }
-  });
+  };
+  if (document.readyState === "complete") renderPlots();
+  else window.addEventListener("load", renderPlots, { once: true });
 }
 
-/* ==========================================================================
-   Actions that should occur when the page has been fully loaded
-   ========================================================================== */
-
 $(document).ready(function () {
-  // SCSS SETTINGS - These should be the same as the settings in the relevant files 
-  const scssLarge = 925;          // pixels, from /_sass/_themes.scss
-  const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
-
-  // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
-  window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
-          }
-        });
-
-  // Enable the theme toggle
-  $('#theme-toggle').on('click', toggleTheme);
-
-  // Enable the sticky footer
-  var bumpIt = function () {
-    $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
-  }
-  $(window).resize(function () {
-    didResize = true;
+  colorPreference.addEventListener("change", () => {
+    if (determineThemeSetting() === "system") setTheme();
   });
-  setInterval(function () {
-    if (didResize) {
-      didResize = false;
-      bumpIt();
-    }}, 250);
-  var didResize = false;
-  bumpIt();
+  document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
 
-  // FitVids init
   fitvids();
 
-  // Follow menu drop down
-  $(".author__urls-wrapper button").on("click", function () {
-    $(".author__urls").fadeToggle("fast", function () { });
-    $(".author__urls-wrapper button").toggleClass("open");
+  const authorButton = $(".author__urls-wrapper button");
+  const authorLinks = $(".author__urls");
+  const desktop = window.matchMedia("(min-width: 925px)");
+  const resetAuthorMenu = () => {
+    authorButton.removeClass("open").attr("aria-expanded", String(desktop.matches));
+    authorLinks.css("display", "");
+  };
+  authorButton.on("click", function () {
+    const expanded = $(this).attr("aria-expanded") !== "true";
+    $(this).toggleClass("open", expanded).attr("aria-expanded", String(expanded));
+    authorLinks.toggle(expanded);
   });
-
-  // Restore the follow menu if toggled on a window resize
-  jQuery(window).on('resize', function () {
-    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
-      $(".author__urls").css('display', 'block')
+  $(".author__urls-wrapper").on("keydown", function (event) {
+    if (event.key === "Escape" && !desktop.matches && authorButton.attr("aria-expanded") === "true") {
+      resetAuthorMenu();
+      authorButton.trigger("focus");
     }
   });
-
-  // Init smooth scroll, this needs to be slightly more than then fixed masthead height
-  $("a").smoothScroll({
-    offset: -scssMastheadHeight,
-    preventDefault: false,
-  });
-
+  desktop.addEventListener("change", resetAuthorMenu);
+  resetAuthorMenu();
 });

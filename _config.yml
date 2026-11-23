@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "gini"
-title: "Dorian Liu / Academic Portfolio"
+title: "Dorian Liu"
 title_separator: "-"
 name: &name "Dorian Liu"
-description: &description "Dorian Liu's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
+description: &description "Dorian Liu is a Computer Science Ph.D. student at Johns Hopkins University working on applied cryptography, zero-knowledge proofs, and blockchains."
 url:
   https://twliu-dorian.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
   # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -24,7 +24,9 @@ repository: "twliu-dorian.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "IMG_6982.jpg"
+  avatar: "dorian-avatar.jpg"
+  avatar_width: 350
+  avatar_height: 350
   name: "Dorian Liu"
   pronouns: # example: "she/her"
   bio: "Building a world secured by cryptographic truth."
