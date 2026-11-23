@@ -1,12 +1,17 @@
 ---
 title: "HoneyCodes: Auditable Short-Code Authentication After Verifier Compromise"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2026-05-11-honeycodes
-excerpt: "Under review at ACM CCS 2026. Auditable short-code authentication that lets a client prove non-generation of disputed codes after verifier compromise, with a practical TOTP instantiation."
+excerpt: "Auditable short-code authentication that lets a client prove non-generation of disputed codes after verifier compromise, with a practical TOTP instantiation."
 date: 2026-05-11
-venue: "Under review at ACM CCS 2026"
+venue: "ACM CCS 2026"
+publication_status: "Published in ACM CCS 2026"
 ---
+
+Matthew Green, Aditya Hegde, and Dorian Liu.
+
+Published in **ACM CCS 2026**. See the [conference's accepted papers](https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html).
 
 **Abstract**
 

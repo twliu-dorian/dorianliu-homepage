@@ -36,9 +36,10 @@
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-   <br />
-   
-    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">BibTeX formatted citation: <br/>{{ post.citation }}</p> {% endif %}
+    {% if post.collection == 'publications' %}
+      {% include publication-meta.html publication=post %}
+    {% endif %}
+    {% if post.citation %}<p class="archive__item-excerpt" itemprop="description">BibTeX formatted citation: <br/>{{ post.citation }}</p>{% endif %}
   </div>
  </article>
 </div>

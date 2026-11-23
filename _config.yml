@@ -82,12 +82,12 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
+  conferences:
+    title: "Conference Papers"
   books:
     title: "Books"
   manuscripts:
-    title: ""
-  conferences:
-    title: "Conference Papers"
+    title: "Preprints and Manuscripts"
 
 # Site Settings
 teaser: # filename of teaser fallback teaser image placed in /images/ for social media previews

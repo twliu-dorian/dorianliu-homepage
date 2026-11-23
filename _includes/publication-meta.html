@@ -1,0 +1,5 @@
+{% if include.publication.publication_status %}
+  <p class="publication-status">{{ include.publication.publication_status | escape }}</p>
+{% elsif include.publication.venue %}
+  <p>Published in <i>{{ include.publication.venue }}</i>, {{ include.publication.date | date: "%Y" }}</p>
+{% endif %}

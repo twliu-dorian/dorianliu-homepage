@@ -44,3 +44,15 @@ redirect_from:
 
   </div>
 </section>
+
+<section class="g-news" aria-labelledby="news-heading">
+  <h2 id="news-heading">News</h2>
+  <ul class="g-news__list">
+    {% for item in site.data.news %}
+    <li class="g-news__item">
+      <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %Y' }}</time>
+      <p><a href="{{ item.url | relative_url }}">{{ item.paper }}</a> {{ item.announcement }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

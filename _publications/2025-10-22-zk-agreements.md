@@ -6,6 +6,7 @@ permalink: /publication/2025-10-22-zk-agreements
 excerpt: "arXiv preprint arXiv:2510.20007, submitted to Financial Cryptography 2026."
 date: 2025-10-22
 venue: "arXiv preprint"
+publication_status: "arXiv preprint, 2025"
 paperurl: "https://arxiv.org/abs/2510.20007"
 citation: |
   @misc{liu2025zkagreementsprivacypreservingwayestablish,
